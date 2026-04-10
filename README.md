@@ -1,17 +1,17 @@
 # Backend Ledger System
 
-Ye ek backend project hai jisme maine **user authentication + transaction system + ledger system** banaya hai.
+This is a backend project where I built a **user authentication system and a transaction ledger system**.
 
 ---
 
 ## Features
 
-* User Register & Login (JWT token)
-* Secure APIs (Authentication middleware)
-* Transaction system (money transfer type)
-* Ledger system (debit & credit entries)
-* Idempotency (same request repeat nahi hoga)
-* MongoDB transactions (safe operations)
+* User Register and Login (JWT based authentication)
+* Protected APIs using middleware
+* Transaction system (transfer-like functionality)
+* Ledger system (debit and credit entries)
+* Idempotency (prevents duplicate transactions)
+* MongoDB transactions for safe operations
 
 ---
 
@@ -46,14 +46,14 @@ src/
 npm install
 ```
 
-2. Create `.env` file:
+2. Create a `.env` file:
 
 ```
-MONGO_URI=your_db_url
-JWT_SECRET=your_secret
+MONGO_URI=your_database_url
+JWT_SECRET=your_secret_key
 ```
 
-3. Run server:
+3. Run the server:
 
 ```
 npm run dev
@@ -61,7 +61,7 @@ npm run dev
 
 ---
 
-## API Use
+## API Usage
 
 ### Register
 
@@ -75,22 +75,20 @@ POST /api/auth/register
 POST /api/auth/login
 ```
 
-### Protected API
+### Protected Routes
+
+Use token in headers:
 
 ```
-Authorization: Bearer <token>
+Authorization: Bearer <your_token>
 ```
 
 ---
 
-## Important
+## Notes
 
-* Token login ke baad milega
-* Protected routes me token bhejna zaroori hai
-* System routes ke liye special user chahiye
+* Token is required for protected routes
+* System routes require special permission (system user)
+* `.env` file is not included for security reasons
 
 ---
-
-## Author
-
-Ashish Shukla
