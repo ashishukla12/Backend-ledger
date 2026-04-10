@@ -75,14 +75,6 @@ POST /api/auth/register
 POST /api/auth/login
 ```
 
-### Protected Routes
-
-Use token in headers:
-
-```
-Authorization: Bearer <your_token>
-```
-
 ---
 
 ## Notes
